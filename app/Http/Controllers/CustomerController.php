@@ -83,6 +83,8 @@ class CustomerController extends Controller
     {
         $customer = Customer::findOrFail($id);
 
+        $customer->order()->delete();
+
         $customer->delete();
 
         return redirect(route('admin.customer'));
