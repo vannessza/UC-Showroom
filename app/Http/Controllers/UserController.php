@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,8 +17,8 @@ class UserController extends Controller
         
         if($user->hasRole("admin")){
             $title = "dashboard";
-            $name = $user->name;
-            return view("petugas.index", compact("title", "name"));
+            $order = Order::All();
+            return view("petugas.order.index", compact("title", "order"));
         }
     }
 

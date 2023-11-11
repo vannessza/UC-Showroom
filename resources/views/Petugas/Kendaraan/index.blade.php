@@ -38,9 +38,6 @@
             <td>{{ $ken['harga'] }}</td>
             <td>
                 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                    <a class="btn btn-info" href="{{ route('admin.kendaraan.show', $ken->id) }}">
-                        <i class="fas fa-arrow-alt-circle-right"></i>Show
-                    </a>
                     <a class="btn btn-primary" href="{{ route('admin.kendaraan.edit', $ken->id) }}">
                         <i class="fas fa-arrow-alt-circle-right"></i>Edit
                     </a>

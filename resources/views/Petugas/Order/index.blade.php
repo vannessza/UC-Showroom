@@ -31,16 +31,16 @@
             <td>{{ $i }}</td>
             <td>{{ $ord->id }}</td>
             <td>{{ $ord->customer->nama }}</td>
-            <td>{{ $ord->tanggal}}</td>
+            <td>{{ $ord->Tanggal}}</td>
             <td>
                 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                    <a class="btn btn-info" href="">
+                    <a class="btn btn-info" href="{{ route('admin.order.show', $ord->id) }}">
                         <i class="fas fa-arrow-alt-circle-right"></i>Show
                     </a>
-                    <a class="btn btn-primary" href="">
+                    <a class="btn btn-primary" href="{{ route('admin.order.edit', $ord->id) }}">
                         <i class="fas fa-arrow-alt-circle-right"></i>Edit
                     </a>
-                    <a class="btn btn-danger" href="">
+                    <a class="btn btn-danger" href="{{ route('admin.order.delete', $ord->id) }}">
                         <i class="fas fa-arrow-alt-circle-right"></i>Delete
                     </a>
                 </div>

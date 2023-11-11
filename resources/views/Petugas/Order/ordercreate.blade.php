@@ -6,25 +6,35 @@
     <h1>Create Order</h1>
     <form method="post" action="{{ route('admin.order.store') }}">
         @csrf
-        <div class="form-floating">
+        <div class="form-group">
             <label for="id_customer">Customer:</label>
-                <select name="id_customer" id="id_customer" class="form-control">
-                    @foreach($customers as $customer)
-                        <option value="{{ $customer->ID_Customer }}">{{ $customer->customer_name }}</option>
-                    @endforeach
-                </select>
+            <select name="id_customer" id="id_customer" class="form-control mb-3">
+                    <option value="">Pilih Customer</option>
+                @foreach($customer as $cus)
+                    <option value="{{ $cus->id }}">{{ $cus->nama }}</option>
+                @endforeach
+            </select>
         </div>
-        <div class="form-floating">
-            <input type="text" name="alamat" class="form-control mb-3" id="alamat" placeholder="Username" required value="{{ old('alamat') }}">
-            <label for="alamat">Alamat</label>
+
+        <div class="form-group">
+            <label for="Tanggal">Tanggal:</label>
+            <input type="date" name="Tanggal" id="Tanggal" class="form-control mb-3">
         </div>
-        <div class="form-floating">
-            <input type="no_telepon" name="no_telepon" class="form-control mb-3" id="no_telepon" placeholder="name@example.com" required value="{{ old('no_telepon') }}">
-            <label for="no_telepon">No Telepon</label>
+
+        <!-- Input fields for order details -->
+        <div class="form-group">
+            <label for="id_kendaraan">Vehicle:</label>
+            <select name="id_kendaraan" id="id_kendaraan" class="form-control mb-3">
+                    <option value="">Pilih Kendaraan</option>
+                @foreach($kendaraan as $ken)
+                    <option value="{{ $ken->id }}">{{ $ken->model }}</option>
+                @endforeach
+            </select>
         </div>
-        <div class="form-floating">
-            <input type="ID_card" name="ID_card" class="form-control mb-3" id="ID_card" placeholder="name@example.com" required value="{{ old('ID_card') }}">
-            <label for="ID_card">ID Card</label>
+
+        <div class="form-group">
+            <label for="jumlah">Jumlah:</label>
+            <input type="number" name="jumlah" id="jumlah" class="form-control mb-3">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>

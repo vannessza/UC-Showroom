@@ -33,7 +33,6 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function (){
     Route::get('/Customer', [CustomerController::class, 'index'])->name('admin.customer');
     Route::get('/Customer/Create', [CustomerController::class, 'create'])->name('admin.customer.create');
     Route::post('/Customer/Create/Store', [CustomerController::class, 'store'])->name('admin.customer.store');
-    Route::get('/Customer/Show/{id}', [CustomerController::class, 'show'])->name('admin.customer.show');
     Route::get('/Customer/Edit/{id}', [CustomerController::class, 'edit'])->name('admin.customer.edit');
     Route::post('/Customer/Update/{id}', [CustomerController::class,'update'])->name('admin.customer.update');
     Route::get('/Customer/Delete/{id}', [CustomerController::class,'destroy'])->name('admin.customer.delete');
@@ -41,7 +40,6 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function (){
     Route::get('/Kendaraan', [KendaraanController::class, 'index'])->name('admin.kendaraan');
     Route::get('/Kendaraan/Create', [KendaraanController::class, 'create'])->name('admin.kendaraan.create');
     Route::post('/Kendaraan/Create/Store', [KendaraanController::class, 'store'])->name('admin.kendaraan.store');
-    Route::get('/Kendaraan/Show/{id}', [KendaraanController::class, 'show'])->name('admin.kendaraan.show');
     Route::get('/Kendaraan/Edit/{id}', [KendaraanController::class, 'edit'])->name('admin.kendaraan.edit');
     Route::post('/Kendaraan/Update/{id}', [KendaraanController::class,'update'])->name('admin.kendaraan.update');
     Route::get('/Kendaraan/Delete/{id}', [KendaraanController::class,'destroy'])->name('admin.kendaraan.delete');

@@ -35,9 +35,6 @@
             <td>{{ $cus['ID_card'] }}</td>
             <td>
                 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                    <a class="btn btn-info" href="{{ route('admin.customer.show', $cus->id) }}">
-                        <i class="fas fa-arrow-alt-circle-right"></i>Show
-                    </a>
                     <a class="btn btn-primary" href="{{ route('admin.customer.edit', $cus->id) }}">
                         <i class="fas fa-arrow-alt-circle-right"></i>Edit
                     </a>
